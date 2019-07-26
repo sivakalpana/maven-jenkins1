@@ -3,6 +3,8 @@ node {
       git 'https://github.com/sivakalpana/maven-jenkins1'
       }
     stage('compile package'){
-      sh 'mvn package'
+       //get maven homepath
+      def mvnHOME= tool name: '', type: 'maven'
+       sh "${mvnHOME}/bin/mvn package"
       }
 }      
